@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style/senate.css">
+        <title>House-data</title>
+    </head>
+    
+    <body class="container-fluid responsive" id="house">
+       <div class="main container-fluid" id="app">
+        <div class="row" id="header">
+            <div class="col-3"><a href="home.html">
+                   <img class="responsive" src="images/Logo.jpg" width="100%" height="100%">
+               </a>
+               </div>
+               <div class="col-7"><h1>Transparent Government In Fact</h1> </div>
+               <div class="col-2" ><a href="mailto:info@tgif.net" id="mail" target="_top"> <i class="fa fa-envelope"> </i>info@tgif.net</a>
+               </div>
+
+        </div>
+            
+        <div>
+            <nav class="recuadrado">
+            <ul class="nav nav-pills">
+              <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+              <li class="nav-item dropdown" >
+                <a class="nav-link active" data-toggle="dropdown" href="#">Congress 113</a>
+                <ul class="dropdown-menu" >
+                  <li class="dropdown-item"><a href="senate-data.html">Senate</a></li>
+                  <li class="dropdown-item"><a href="#">House</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav nav-link" data-toggle="dropdown" href="#">Attendance</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="senate-attendance.html">Senate</a></li>
+                    <li class="dropdown-item"><a href="house-attendance.html">House</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav nav-link" data-toggle="dropdown" href="#">Party Loyalty</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="senate-party-loyalty.html">Senate</a></li>
+                    <li class="dropdown-item"><a href="house-party-loyalty.html">House</a></li>
+                  </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>        
+            <!--Table container-->
+        <div>     
+            <h2>Congressmen</h2>
+            <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+            <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+       	    <div class="row">
+             <div class="col-6">
+                 <label>Filter by Party: </label>
+                 <label>
+                    <input v-model="parties" type="checkbox" name="party" value="R" onclick="creandoTabla(miembros)" checked > Republican  
+                </label>
+                <label>
+                    <input v-model="parties" type="checkbox" name="party" value="D"  onclick="creandoTabla(miembros)"checked> Democrat  
+                </label>
+                <label>
+                    <input v-model="parties" type="checkbox" name="party" value="I"  onclick="creandoTabla(miembros)"checked> Independent  
+                </label>
+             </div>
+             <div class="col-6">
+                 <label for="estado">Select State</label>
+                <select v-model= "estado" id="states">
+                     <option value= "all">All States</option>
+                     <option v-for= "value in creandoDesplegable2" :value = "value">{{value}}</option> 
+
+                 </select> 
+             </div>
+                
+            </div>
+            <div class="table-responsive bordesTablas" id="scroll">
+                <table class="table table-active table-bordered table-striped table-fixed">
+                <thead class="thead-dark" >
+                    <tr>
+                        <th>Name</th>
+                        <th>Party</th>
+                        <th>State</th>
+                        <th>Years in Office</th>
+                        <th>% Votes w/Party </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="value in mostrarMiembros()">
+                    <td><a :href="value.url">{{value.last_name}} ,{{value.first_name}} {{value.middle_name}}</a></td> 
+                    <td>{{value.party}}</td>
+                    <td>{{value.state}}</td>
+                    <td>{{value.seniority}}</td>
+                    <td>{{value.votes_with_party_pct}}{{ "%"}}</td>
+              </tr>
+
+                </tbody>
+            </table>
+
+            </div>
+        </div>
+        <footer class="text-center recuadrado">
+            &copy; 2016 TGIF | All Rights Reserved
+        </footer>
+        </div>
+        <!--<script type="text/javascript" src="./js/congress-113-house.js"></script>-->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/scripts.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

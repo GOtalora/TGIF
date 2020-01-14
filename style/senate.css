@@ -1,0 +1,72 @@
+#scroll{
+    overflow-y:scroll;
+     height:300px;
+     width:100%;
+    margin: 2% 0%;
+}
+#scroll table {
+    width:100%;
+    background-color: lightgray;
+}
+
+.main{
+    margin: 0% 2%;
+}
+.container-fluid{
+    padding: 0;
+}
+h1{
+ text-align: left;
+    align-self: center;
+    padding-top: 10%;
+    font-family: "Tohama", sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+    font-style: italic;
+}
+.responsive {
+  width: 100%;
+  height: auto;
+}
+#mail{
+    font-size: 18px;
+    position: absolute;
+    bottom: 4%;
+    right: 5%
+}
+a:link{
+    text-decoration: none;
+}
+.recuadrado{
+    background-color: lightgray;
+    border: solid 1px gray;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
+.text-center{
+    padding: 1% 2%;
+}
+nav li:hover{
+    background-color: darkgray;
+}
+#header{
+    margin: 0%;
+    background-color: lightgoldenrodyellow;
+}
+.card{
+    margin: 2% 0%;
+}
+label{
+    margin-right: 2%;
+}
+.titulosTablas{
+    font-size: 20px;
+}
+.bordesTablas{
+    border: solid 1px gray;
+    border-radius: 5px;
+    margin: 2%;
+}
+.table{
+    margin: 0%;
+}
